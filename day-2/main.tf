@@ -47,6 +47,6 @@ resource "aws_s3_bucket" "d" {
   bucket = "cloudblitz-terraform-fastrack"
   tags = {
     Name = "cloudblitz-terraform-fastrack"
-    env = "dev"
+    env  = "dev"
   }
 }

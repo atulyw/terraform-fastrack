@@ -20,7 +20,7 @@ resource "aws_instance" "dev" {
   dynamic "ebs_block_device" {
     for_each = var.ebs_block_device
     content {
-      volume_size = ebs_block_device.key  
+      volume_size = ebs_block_device.key
       device_name = ebs_block_device.value["device_name"]
       volume_type = ebs_block_device.value["volume_type"]
     }

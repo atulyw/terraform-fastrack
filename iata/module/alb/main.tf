@@ -58,8 +58,8 @@ resource "aws_lb_listener" "http" {
 
 module "tg" {
   source       = "./tg"
-  env = var.env
-  app = var.app
+  env          = var.env
+  app          = var.app
   for_each     = var.app_config
   listener_arn = aws_lb_listener.http.arn
   vpc_id       = var.vpc_id
