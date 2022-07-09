@@ -1,0 +1,31 @@
+vars:
+  - string
+  - list
+  - map
+  - number
+  - boolean
+  - any
+  - object
+
+day2:     
+    - output     
+    - "Data types for variables"     
+    - "Referencing Cross-Resource Attributes"     
+    - Variables:        
+      - string         
+      - map         
+      - list         
+      - number        
+       - bool         
+       - any
+day3:            
+    - functions:         
+       - "count.index +1 /[with resource and with vars/]"  
+       - conditional expression      
+       - local values         
+       - user_data         
+       - merge         
+       - format         
+       - length
+       - dynamic block
+       - iterator
