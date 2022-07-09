@@ -1,3 +1,13 @@
+terraform {
+  backend "s3" {
+    bucket = "iatao-state-dev"
+    key    = "dev/iata.tfstate"
+    region = "us-east-1"
+    profile = "shubham-dev"
+    dynamodb_table = "iata-dev-state"
+  }
+}
+
 module "s3" {
   source        = "../../module/cloudfront"
   env           = var.env
@@ -8,8 +18,8 @@ module "s3" {
 
 module "vpc" {
   source              = "../../module/vpc"
-  env                 = "dev"
-  app                 = "iata"
+  env                 = var.env
+  app                 = var.app
   availability_zone   = ["us-east-1a", "us-east-1b", "us-east-1c"]
   vpc_cidr_block      = "10.0.0.0/16"
   private_cidr_block  = ["10.0.1.0/24", "10.0.2.0/24"]
@@ -19,8 +29,8 @@ module "vpc" {
 
 module "alb" {
   source             = "../../module/alb"
-  env                = "dev"
-  app                = "iata"
+  env                = var.env
+  app                = var.app
   load_balancer_type = "application"
   security_groups    = [aws_security_group.allow_tls.id]
   public_subnets     = module.vpc.public_subnet_id

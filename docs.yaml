@@ -29,3 +29,8 @@ day3:
        - length
        - dynamic block
        - iterator
+day5:
+      - "terraform init \
+-backend-config="bucket=${TFSTATE_BUCKET}" \
+-backend-config="key=${TFSTATE_KEY}" \
+-backend-config="region=${TFSTATE_REGION}" "       
