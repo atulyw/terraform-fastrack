@@ -1,17 +1,17 @@
-variable "app" {
-  type        = string
-  description = "applications name"
-}
+# variable "app" {
+#   type        = string
+#   description = "applications name"
+# }
 
-variable "env" {
-  type        = string
-  description = "env name"
-}
+# variable "env" {
+#   type        = string
+#   description = "env name"
+# }
 
-variable "mf" {
-  type = list(any)
-}
+# variable "mf" {
+#   type = list(any)
+# }
 
-variable "tags" {
-  type = map(any)
-}
+# variable "tags" {
+#   type = map(any)
+# }
